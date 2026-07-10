@@ -26,8 +26,8 @@ CONFIG_PACKAGE_luci-app-homeproxy=y        # 轻量高效，推荐
 # ========================================
 # TTYD 终端（Web SSH）
 # ========================================
-CONFIG_PACKAGE_luci-app-ttyd=y             # Web SSH 终端
-CONFIG_PACKAGE_ttyd=y                      # ttyd 核心程序
+#CONFIG_PACKAGE_luci-app-ttyd=y             # Web SSH 终端
+#CONFIG_PACKAGE_ttyd=y                      # ttyd 核心程序
 
 # ========================================
 # 网络应用插件
