@@ -13,88 +13,103 @@ CONFIG_PACKAGE_ath11k-firmware-ipq6018-ddwrt=n
 CONFIG_PACKAGE_ath11k-firmware-qcn9074=n
 CONFIG_PACKAGE_ath11k-firmware-qcn9074-ddwrt=n
 
-# ========================================
-# 科学插件（低配设备首选）
-# ========================================
-CONFIG_PACKAGE_luci-app-homeproxy=y        # 轻量高效，推荐
+#################################################
+# PassWall2
+#################################################
+CONFIG_PACKAGE_luci-app-passwall2=y
+CONFIG_PACKAGE_sing-box=y
 
-# ========================================
-# UU加速器（游戏加速）
-# ========================================
-#CONFIG_PACKAGE_luci-app-uugamebooster=y #没有官方包
+CONFIG_PACKAGE_xray-core=n
+CONFIG_PACKAGE_hysteria=n
+CONFIG_PACKAGE_naiveproxy=n
+CONFIG_PACKAGE_tuic-client=n
+CONFIG_PACKAGE_shadowsocks-libev-ss-local=n
+CONFIG_PACKAGE_shadowsocks-libev-ss-redir=n
+CONFIG_PACKAGE_shadowsocks-rust-sslocal=n
 
-# ========================================
-# TTYD 终端（Web SSH）
-# ========================================
-CONFIG_PACKAGE_luci-app-ttyd=y             # Web SSH 终端
-CONFIG_PACKAGE_ttyd=y                      # ttyd 核心程序
+#################################################
+# LuCI
+#################################################
+CONFIG_PACKAGE_luci-app-ttyd=y
+CONFIG_PACKAGE_ttyd=y
 
-# ========================================
-# 网络应用插件
-# ========================================
-CONFIG_PACKAGE_luci-app-autoreboot=y       # 自动重启
-CONFIG_PACKAGE_luci-app-upnp=y             # UPnP（游戏/P2P需要）
-CONFIG_PACKAGE_luci-app-wolplus=y          # 网络唤醒
+CONFIG_PACKAGE_luci-app-autoreboot=y
+CONFIG_PACKAGE_luci-app-upnp=y
+CONFIG_PACKAGE_luci-app-wolplus=y
 
-# ========================================
-# 系统基础组件（最小化）
-# ========================================
-CONFIG_PACKAGE_autocore=y                  # CPU/温度监控
-CONFIG_PACKAGE_luci-base=y                 # Luci必需
+#################################################
+# 基础系统
+#################################################
+CONFIG_PACKAGE_autocore=y
+
+CONFIG_PACKAGE_luci-base=y
 CONFIG_PACKAGE_luci-compat=y
 CONFIG_PACKAGE_luci-lib-base=y
 CONFIG_PACKAGE_luci-lib-ipkg=y
 CONFIG_PACKAGE_luci-lua-runtime=y
-CONFIG_PACKAGE_luci-proto-relay=y
-CONFIG_PACKAGE_ip-full=y                   # 完整IP工具
-CONFIG_PACKAGE_curl=y                      # 下载/更新依赖
-CONFIG_PACKAGE_openssl-util=y              # SSL工具
-CONFIG_PACKAGE_openssh-keygen=y            # SSH密钥生成
-CONFIG_PACKAGE_openssh-sftp-server=y       # SFTP服务
-CONFIG_PACKAGE_blkid=y                     # 设备识别
-CONFIG_PACKAGE_dmesg=y                     # 系统日志查看
-CONFIG_PACKAGE_htop=y                      # 进程监控
-CONFIG_PACKAGE_iperf3=y                    # 网络测速
-CONFIG_PACKAGE_coremark=y                  # CPU性能测试
-CONFIG_PACKAGE_cpufreq=y                   # CPU频率调控
-CONFIG_PACKAGE_xz-utils=y                  # 压缩工具
 
-# ========================================
-# 网络内核模块（最小化）
-# ========================================
-CONFIG_PACKAGE_kmod-tun=y                  # VPN必需
-CONFIG_PACKAGE_kmod-wireguard=y            # WireGuard协议
-CONFIG_PACKAGE_kmod-veth=y                 # 虚拟网卡
-CONFIG_PACKAGE_kmod-dummy=y                # 虚拟网络接口
-CONFIG_PACKAGE_kmod-bonding=y              # 网卡绑定
-CONFIG_PACKAGE_proto-bonding=y             # 绑定协议
+CONFIG_PACKAGE_dnsmasq-full=y
+CONFIG_PACKAGE_dnsmasq=n
 
-# ========================================
-# NFTables（防火墙，科学插件依赖）
-# ========================================
-CONFIG_PACKAGE_kmod-nft-core=y             # 必需
-CONFIG_PACKAGE_kmod-nft-nat=y              # 必需
-CONFIG_PACKAGE_kmod-nft-offload=y          # 硬件加速（提升性能）
-CONFIG_PACKAGE_kmod-nft-tproxy=y           # 透明代理（科学需要）
-CONFIG_PACKAGE_kmod-nft-fullcone=y         # 全锥形NAT（游戏需要）
+CONFIG_PACKAGE_ip-full=y
+CONFIG_PACKAGE_curl=y
+CONFIG_PACKAGE_openssl-util=y
 
-# ========================================
-# 其他内核模块
-# ========================================
-#CONFIG_PACKAGE_kmod-ata-ahci=y             # SATA支持
-#CONFIG_PACKAGE_kmod-ata-core=y             # ATA核心
-CONFIG_PACKAGE_kmod-inet-diag=y            # 网络诊断
-CONFIG_PACKAGE_kmod-inet-mptcp-diag=y      # MPTCP诊断
-CONFIG_PACKAGE_kmod-netlink-diag=y         # Netlink诊断
-CONFIG_PACKAGE_kmod-nf-nat6=y              # IPv6 NAT
-CONFIG_PACKAGE_kmod-ovpn-backports=y       # OpenVPN支持
+CONFIG_PACKAGE_dmesg=y
 
-# ========================================
-# 编译参数
-# ========================================
-CONFIG_CCACHE=y                            # 编译缓存加速
-CONFIG_DEVEL=y                             # 开发者模式
-CONFIG_FEED_video=n                        # 禁用视频源（省空间）
-CONFIG_TARGET_MULTI_PROFILE=y              # 多设备支持
-CONFIG_TARGET_PER_DEVICE_ROOTFS=y          # 独立根文件系统
-CONFIG_TARGET_ROOTFS_INITRAMFS=n           # 禁用initramfs
+#################################################
+# VPN
+#################################################
+CONFIG_PACKAGE_kmod-tun=y
+CONFIG_PACKAGE_kmod-wireguard=y
+
+#################################################
+# Firewall
+#################################################
+CONFIG_PACKAGE_kmod-nft-core=y
+CONFIG_PACKAGE_kmod-nft-nat=y
+CONFIG_PACKAGE_kmod-nft-tproxy=y
+CONFIG_PACKAGE_kmod-nft-offload=y
+CONFIG_PACKAGE_kmod-nft-fullcone=y
+
+#################################################
+# 删除调试组件
+#################################################
+CONFIG_PACKAGE_blkid=n
+CONFIG_PACKAGE_htop=n
+CONFIG_PACKAGE_iperf3=n
+CONFIG_PACKAGE_coremark=n
+CONFIG_PACKAGE_cpufreq=n
+CONFIG_PACKAGE_xz-utils=n
+
+CONFIG_PACKAGE_openssh-keygen=n
+CONFIG_PACKAGE_openssh-sftp-server=n
+
+CONFIG_PACKAGE_luci-proto-relay=n
+
+#################################################
+# 删除无用内核模块
+#################################################
+CONFIG_PACKAGE_kmod-veth=n
+CONFIG_PACKAGE_kmod-dummy=n
+
+CONFIG_PACKAGE_kmod-bonding=n
+CONFIG_PACKAGE_proto-bonding=n
+
+CONFIG_PACKAGE_kmod-inet-diag=n
+CONFIG_PACKAGE_kmod-inet-mptcp-diag=n
+CONFIG_PACKAGE_kmod-netlink-diag=n
+
+CONFIG_PACKAGE_kmod-nf-nat6=n
+CONFIG_PACKAGE_kmod-ovpn-backports=n
+
+#################################################
+# 编译
+#################################################
+CONFIG_CCACHE=y
+CONFIG_DEVEL=n
+CONFIG_FEED_video=n
+
+CONFIG_TARGET_MULTI_PROFILE=n
+CONFIG_TARGET_PER_DEVICE_ROOTFS=y
+CONFIG_TARGET_ROOTFS_INITRAMFS=n
