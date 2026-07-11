@@ -1,18 +1,25 @@
 # =========================
 # 设备平台
 # =========================
+#设备平台
 CONFIG_TARGET_qualcommax=y
-CONFIG_TARGET_qualcommax_ipq50xx=y
-
-# 设备列表
-CONFIG_TARGET_DEVICE_qualcommax_ipq50xx_DEVICE_cmcc_mr3000d-ci=y
-
+CONFIG_TARGET_qualcommax_ipq60xx=y
+#设备列表
+CONFIG_TARGET_DEVICE_qualcommax_ipq60xx_DEVICE_zn_m2=y
+#WIFI驱动
+CONFIG_PACKAGE_kmod-ath=n
+CONFIG_PACKAGE_kmod-ath11k=n
+CONFIG_PACKAGE_kmod-ath11k-ahb=n
+CONFIG_PACKAGE_kmod-ath11k-pci=n
+CONFIG_PACKAGE_ath11k-firmware-ipq6018=n
+CONFIG_PACKAGE_ath11k-firmware-ipq6018-ddwrt=n
+CONFIG_PACKAGE_ath11k-firmware-qcn9074=n
+CONFIG_PACKAGE_ath11k-firmware-qcn9074-ddwrt=n
 
 # =========================
 # 科学插件
 # =========================
 CONFIG_PACKAGE_luci-app-homeproxy=y
-
 
 # =========================
 # 常用插件
@@ -23,7 +30,6 @@ CONFIG_PACKAGE_luci-app-tailscale=y
 CONFIG_PACKAGE_luci-app-upnp=y
 CONFIG_PACKAGE_luci-app-wolplus=y
 
-
 # 删除插件
 CONFIG_PACKAGE_luci-app-attendedsysupgrade=n
 CONFIG_PACKAGE_luci-app-wol=n
@@ -32,7 +38,6 @@ CONFIG_PACKAGE_luci-app-wol=n
 CONFIG_PACKAGE_luci-app-samba4=n
 CONFIG_PACKAGE_samba4-server=n
 CONFIG_PACKAGE_samba4-utils=n
-
 
 # =========================
 # 编译参数
@@ -48,7 +53,6 @@ CONFIG_TARGET_PER_DEVICE_ROOTFS=y
 
 CONFIG_TARGET_ROOTFS_INITRAMFS=n
 
-
 # =========================
 # 内核模块
 # =========================
@@ -57,7 +61,6 @@ CONFIG_TARGET_ROOTFS_INITRAMFS=n
 CONFIG_PACKAGE_kmod-tun=y
 CONFIG_PACKAGE_kmod-wireguard=y
 
-
 # ---- NFT 防火墙 ----
 CONFIG_PACKAGE_kmod-nft-core=y
 CONFIG_PACKAGE_kmod-nft-nat=y
@@ -65,7 +68,6 @@ CONFIG_PACKAGE_kmod-nft-tproxy=y
 CONFIG_PACKAGE_kmod-nft-fullcone=y
 CONFIG_PACKAGE_kmod-nft-offload=y
 CONFIG_PACKAGE_kmod-nft-socket=y
-
 
 # 删除高级NFT模块
 CONFIG_PACKAGE_kmod-nft-arp=n
@@ -77,11 +79,9 @@ CONFIG_PACKAGE_kmod-nft-netdev=n
 CONFIG_PACKAGE_kmod-nft-queue=n
 CONFIG_PACKAGE_kmod-nft-xfrm=n
 
-
 # ---- 删除 ATA/SATA ----
 CONFIG_PACKAGE_kmod-ata-ahci=n
 CONFIG_PACKAGE_kmod-ata-core=n
-
 
 # ---- 删除USB全部 ----
 CONFIG_PACKAGE_kmod-usb-core=n
@@ -91,7 +91,6 @@ CONFIG_PACKAGE_kmod-usb-xhci=n
 
 CONFIG_PACKAGE_kmod-usb-storage=n
 CONFIG_PACKAGE_kmod-usb-storage-uas=n
-
 
 # USB网络设备删除
 CONFIG_PACKAGE_kmod-usb-net=n
@@ -109,18 +108,15 @@ CONFIG_PACKAGE_kmod-usb-net-ipheth=n
 CONFIG_PACKAGE_kmod-usb-net-rndis=n
 CONFIG_PACKAGE_kmod-usb-net-sierrawireless=n
 
-
 # USB其他设备
 CONFIG_PACKAGE_kmod-usb-audio=n
 CONFIG_PACKAGE_kmod-sound-core=n
 CONFIG_PACKAGE_kmod-usb-ohci=n
 CONFIG_PACKAGE_kmod-usb-uhci=n
 
-
 # ---- 删除文件系统 ----
 CONFIG_PACKAGE_kmod-fs-btrfs=n
 CONFIG_PACKAGE_kmod-fuse=n
-
 
 # ---- 删除其他无用内核模块 ----
 CONFIG_PACKAGE_kmod-bonding=n
@@ -130,14 +126,12 @@ CONFIG_PACKAGE_kmod-veth=n
 
 CONFIG_PACKAGE_kmod-inet-mptcp-diag=n
 
-
 # =========================
 # 删除磁盘管理
 # =========================
 
 CONFIG_PACKAGE_luci-app-mini-diskmanager=n
 CONFIG_PACKAGE_luci-app-partexp=n
-
 
 # 分区工具
 CONFIG_PACKAGE_blkid=n
@@ -150,13 +144,11 @@ CONFIG_PACKAGE_gdisk=n
 CONFIG_PACKAGE_sfdisk=n
 CONFIG_PACKAGE_sgdisk=n
 
-
 # =========================
 # 删除开发测试
 # =========================
 
 CONFIG_PACKAGE_coremark=n
-
 
 # =========================
 # 删除手机USB支持
@@ -165,13 +157,11 @@ CONFIG_PACKAGE_coremark=n
 CONFIG_PACKAGE_libimobiledevice=n
 CONFIG_PACKAGE_usbmuxd=n
 
-
 # =========================
 # 删除4G USB设备支持
 # =========================
 
 CONFIG_PACKAGE_usb-modeswitch=n
-
 
 # =========================
 # 保留基础组件
