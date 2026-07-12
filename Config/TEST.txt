@@ -94,10 +94,10 @@ CONFIG_PACKAGE_kmod-ata-ahci=n
 CONFIG_PACKAGE_kmod-ata-core=n
 
 # ---- 删除USB全部 ----
-CONFIG_PACKAGE_kmod-usb-core=n
-CONFIG_PACKAGE_kmod-usb3=n
-CONFIG_PACKAGE_kmod-usb-dwc3=n
-CONFIG_PACKAGE_kmod-usb-xhci=n
+CONFIG_PACKAGE_kmod-usb-core=y
+CONFIG_PACKAGE_kmod-usb3=y
+CONFIG_PACKAGE_kmod-usb-dwc3=y
+CONFIG_PACKAGE_kmod-usb-xhci=y
 
 CONFIG_PACKAGE_kmod-usb-storage=n
 CONFIG_PACKAGE_kmod-usb-storage-uas=n
